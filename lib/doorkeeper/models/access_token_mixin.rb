@@ -24,7 +24,9 @@ module Doorkeeper
       #   if there is no record with such token
       #
       def by_token(token)
-        find_by_plaintext_token(:token, token)
+        ActiveRecordSlave.read_from_master do
+          find_by_plaintext_token(:token, token)
+        end
       end
 
       # Returns an instance of the Doorkeeper::AccessToken
