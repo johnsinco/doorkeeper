@@ -27,7 +27,7 @@ Gem::Specification.new do |gem|
   }
 
   gem.add_dependency "railties", ">= 5"
-  gem.add_dependency "active_record_slave"
+  gem.add_dependency "active_record_replica"
   gem.required_ruby_version = ">= 2.3"
 
   gem.add_development_dependency "appraisal"
